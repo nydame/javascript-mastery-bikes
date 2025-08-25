@@ -6,7 +6,8 @@ const answers = {};
 quiz_form.addEventListener("change", updateAnswers);
 function updateAnswers(event) {
   //code to store answers
-
+  answers[event.target.name] = event.target.value;
+  console.log("event.target.name: ", event.target.name);
 
 
   console.log("answers: ", answers);
