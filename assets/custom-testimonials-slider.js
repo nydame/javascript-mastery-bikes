@@ -1,14 +1,15 @@
 // initialize slideshows
-const options = {
-	cellAlign: "left",
-	wrapAround: true,
-	autoPlay: false,
-	pageDots: false,
-	fullscreen: true,
-	pauseAutoPlayOnHover: false
-};
 const carousels = document.querySelectorAll(".testimonial-slider");
 carousels.forEach((carousel, index) => {
+    const autoPlayValue = carousel.dataset.autoplay ?? false;
+	const options = {
+		cellAlign: "left",
+		wrapAround: true,
+		autoPlay: autoPlayValue ? parseInt(autoPlayValue) : false,
+		pageDots: false,
+		fullscreen: true,
+		pauseAutoPlayOnHover: false
+	};
 	initiateSlider(carousel, options);
 });
 
