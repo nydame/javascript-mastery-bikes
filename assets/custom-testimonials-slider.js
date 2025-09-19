@@ -1,17 +1,24 @@
-// initialize slideshow
-const slideshow_container = document.querySelector('.testimonial-slider');
-
-const slider = new Flickity( slideshow_container, {
-    autoplay: false,
-    cellAlign: 'left',
-    contain: true,
-    pageDots: false,
-    wrapAround: true,
-    pauseAutoPlayOnHover: false,
+// initialize slideshows
+const options = {
+	cellAlign: "left",
+	wrapAround: true,
+	autoPlay: false,
+	pageDots: false,
+	fullscreen: true,
+	pauseAutoPlayOnHover: false
+};
+const carousels = document.querySelectorAll(".testimonial-slider");
+carousels.forEach((carousel, index) => {
+	initiateSlider(carousel, options);
 });
 
+function initiateSlider(elem, op) {
+	const flkty = new Flickity(elem, op);
+}
+
+
 // config:
-// assume there is just one single slider on the page
+// assume there is just one single slider on the page NOW DROP ASSUMTION
 // navigation dots should be disabled
 // no autoplay
 // infinite loop
