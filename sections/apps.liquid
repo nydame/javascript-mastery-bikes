@@ -1,6 +1,6 @@
 <div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   {%- for block in section.blocks -%}
-    {% render block.type, block: block  %}
+    {% render block, block: block %}
   {%- endfor -%}
 </div>
 
@@ -29,3 +29,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render block.type, block: block  %}"
+  to: "{% render block, block: block %}"
+  position: 208..240
+{% endcomment %}
